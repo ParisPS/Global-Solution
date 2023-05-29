@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Solution - FPV</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&family=Titillium+Web:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerenciamento de Gastos de Água</h1>
+    <p>gastos de água para usuários domésticos e/ou corporativos</p>
+  
+    <div id="expense-form">
+      <h2>Cadastro de Despesas</h2>
+      <form>
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" required>
+  
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" step="0.01" required>
+  
+        <button type="submit">Adicionar despesa</button>
+      </form>
+    </div>
+  
+    <div id="filter-controls">
+      <input type="text" id="search-input" placeholder="Buscar...">
+      <select id="filter-field">
+        <option value="descricao">Descrição</option>
+        <option value="valor">Valor</option>
+      </select>
+    </div>
+  
+    <div id="expense-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- As despesas estarão aqui-->
+        </tbody>
+      </table>
+    </div>
+  
+    <div id="reports">
+      <h2>Relatórios</h2>
+      <div class="card">
+        <h3>Total de Despesas</h3>
+        <p id="total-expenses">-</p>
+      </div>
+      <div class="card">
+        <h3>Análise de Consumo</h3>
+        <canvas id="consumption-chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
